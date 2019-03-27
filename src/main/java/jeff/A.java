@@ -25,6 +25,10 @@ public class A {
         this.b = b;
     }
 
+    public B getB() {
+        return this.b;
+    }
+
     public int getHeight() {
         return this.height;
     }

@@ -4,12 +4,16 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <!--<context:annotation-config/>-->
-    <context:component-scan base-package="jeff"/>
+    <!--<context:component-scan base-package="jeff"/>-->
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
     <bean id="a" class="jeff.A"
           init-method="AInit"
           destroy-method="ADestroy"
           p:name="jeff"
           p:value="C438"
+    />
+    <bean id="b" class="jeff.B"
+          p:name="B"
     />
 
 </beans>
