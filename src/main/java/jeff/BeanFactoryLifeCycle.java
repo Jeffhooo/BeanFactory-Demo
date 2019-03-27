@@ -7,7 +7,7 @@ import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
-public class BeanLifeCycle {
+public class BeanFactoryLifeCycle {
     public static void main(String[] args) {
         // Get resource from bean.xml file
         Resource res = new ClassPathResource("bean.xml");
@@ -33,7 +33,7 @@ public class BeanLifeCycle {
 //        Console output:
 //        MyInstantiationAwareBeanPostProcessor.postProcessBeforeInstantiation
 //        Call A constructor.
-//                InstantiationAwareBeanPostProcessor.postProcessAfterInstantiation
+//        InstantiationAwareBeanPostProcessor.postProcessAfterInstantiation
 //        InstantiationAwareBeanPostProcessor.postProcessPropertyValues
 //        Call A.setName: jeff
 //        Call A.setValue: C438
@@ -41,7 +41,7 @@ public class BeanLifeCycle {
 //        Call AInit, set height as 170
 //        Call MyBeanPostProcessor.postProcessAfterInitialization, a is higher than 160. Set a to 160.
 //        Hello, My name is jeff.
-//                Call A.setValue: C001
+//        Call A.setValue: C001
 //        a == aa: true
 //        Call ADestroy.
     }

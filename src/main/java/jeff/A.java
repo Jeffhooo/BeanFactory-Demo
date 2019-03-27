@@ -1,9 +1,13 @@
 package jeff;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class A {
     private String name;
     private String value;
     private int height;
+    @Autowired
+    private B b;
 
     public A() { System.out.println("Call A constructor.");}
 
@@ -15,6 +19,10 @@ public class A {
     public void setValue(String value) {
         System.out.println("Call A.setValue: " + value);
         this.value = value;
+    }
+
+    public void setB(B b) {
+        this.b = b;
     }
 
     public int getHeight() {
