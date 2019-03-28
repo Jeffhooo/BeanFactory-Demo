@@ -25,8 +25,14 @@ public class BeanFactoryLifeCycle {
         a.setValue("C001");
 
         A aa = (A)bf.getBean("a");
-
         System.out.println("a == aa: " + (a == aa));
+
+        try {
+            B b = a.getB();
+            System.out.println("b is " + b.getName());
+        } catch (NullPointerException e) {
+            System.out.println("b is not autowired.");
+        }
 
         ((DefaultListableBeanFactory)bf).destroySingletons();
 
@@ -43,6 +49,7 @@ public class BeanFactoryLifeCycle {
 //        Hello, My name is jeff.
 //        Call A.setValue: C001
 //        a == aa: true
+//        b is not autowired.
 //        Call ADestroy.
     }
 }
