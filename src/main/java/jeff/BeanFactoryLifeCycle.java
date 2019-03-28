@@ -21,9 +21,6 @@ public class BeanFactoryLifeCycle {
         ((ConfigurableBeanFactory)bf).addBeanPostProcessor(new AInstantiationAwareBeanPostProcessor());
 
         A a = (A)bf.getBean("a");
-        a.say();
-        a.setValue("C001");
-
         A aa = (A)bf.getBean("a");
         System.out.println("a == aa: " + (a == aa));
 
@@ -36,20 +33,18 @@ public class BeanFactoryLifeCycle {
 
         ((DefaultListableBeanFactory)bf).destroySingletons();
 
-//        Console output:
-//        MyInstantiationAwareBeanPostProcessor.postProcessBeforeInstantiation
-//        Call A constructor.
-//        InstantiationAwareBeanPostProcessor.postProcessAfterInstantiation
-//        InstantiationAwareBeanPostProcessor.postProcessPropertyValues
-//        Call A.setName: jeff
-//        Call A.setValue: C438
-//        Call MyBeanPostProcessor.postProcessAfterInitialization, a is shorter than 170. Set a to 170.
-//        Call AInit, set height as 170
-//        Call MyBeanPostProcessor.postProcessAfterInitialization, a is higher than 160. Set a to 160.
-//        Hello, My name is jeff.
-//        Call A.setValue: C001
-//        a == aa: true
-//        b is not autowired.
-//        Call ADestroy.
+//      Console output:
+//      AInstantiationAwareBeanPostProcessor.postProcessBeforeInstantiation
+//      Call A constructor.
+//      AInstantiationAwareBeanPostProcessor.postProcessAfterInstantiation
+//      AInstantiationAwareBeanPostProcessor.postProcessPropertyValues
+//      Call A.setName: jeff
+//      Call A.setValue: C438
+//      Call ABeanPostProcessor.postProcessAfterInitialization
+//      Call AInit, set height as 170
+//      Call ABeanPostProcessor.postProcessAfterInitialization
+//      a == aa: true
+//      b is not autowired.
+//      Call ADestroy.
     }
 }

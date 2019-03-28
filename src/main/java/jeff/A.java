@@ -8,6 +8,8 @@ public class A {
     private int height;
     @Autowired
     private B b;
+    @Autowired
+    private C c;
 
     public A() { System.out.println("Call A constructor.");}
 
@@ -27,6 +29,10 @@ public class A {
 
     public B getB() {
         return this.b;
+    }
+
+    public C getC() {
+        return this.c;
     }
 
     public int getHeight() {

@@ -8,7 +8,7 @@ public class AbeanPostProcessor implements BeanPostProcessor {
         if (s.equals("a")) {
             A a = (A)o;
             if (a.getHeight() <= 170) {
-                System.out.println("Call MyBeanPostProcessor.postProcessAfterInitialization, a is shorter than 170. Set a to 170.");
+                System.out.println("Call ABeanPostProcessor.postProcessAfterInitialization");
                 a.setHeight(170);
             }
         }
@@ -19,7 +19,7 @@ public class AbeanPostProcessor implements BeanPostProcessor {
         if (s.equals("a")) {
             A a = (A)o;
             if (a.getHeight() >= 160) {
-                System.out.println("Call MyBeanPostProcessor.postProcessAfterInitialization, a is higher than 160. Set a to 160.");
+                System.out.println("Call ABeanPostProcessor.postProcessAfterInitialization");
                 a.setHeight(160);
             }
         }

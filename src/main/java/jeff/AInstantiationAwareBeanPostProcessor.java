@@ -9,14 +9,14 @@ import java.beans.PropertyDescriptor;
 public class AInstantiationAwareBeanPostProcessor extends InstantiationAwareBeanPostProcessorAdapter {
     public Object postProcessBeforeInstantiation(Class beanClass, String beanName) throws BeansException {
         if("a".equals(beanName)){
-            System.out.println("MyInstantiationAwareBeanPostProcessor.postProcessBeforeInstantiation");
+            System.out.println("AInstantiationAwareBeanPostProcessor.postProcessBeforeInstantiation");
         }
         return null;
     }
 
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
         if("a".equals(beanName)){
-            System.out.println("InstantiationAwareBeanPostProcessor.postProcessAfterInstantiation");
+            System.out.println("AInstantiationAwareBeanPostProcessor.postProcessAfterInstantiation");
         }
         return true;
     }
@@ -25,7 +25,7 @@ public class AInstantiationAwareBeanPostProcessor extends InstantiationAwareBean
             PropertyValues pvs, PropertyDescriptor[] pds, Object bean, String beanName)
             throws BeansException {
         if("a".equals(beanName)){
-            System.out.println("InstantiationAwareBeanPostProcessor.postProcessPropertyValues");
+            System.out.println("AInstantiationAwareBeanPostProcessor.postProcessPropertyValues");
         }
         return pvs;
     }
