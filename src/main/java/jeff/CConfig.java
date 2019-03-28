@@ -9,7 +9,7 @@ public class CConfig {
 
     @Bean
 //  @Scope("prototype")
-    public C CIf() {
+    public C C() {
         return new CImp();
     }
 }

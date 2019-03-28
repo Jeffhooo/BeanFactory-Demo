@@ -10,10 +10,6 @@
           p:name="jeff"
           p:value="C438"
     />
-    <bean id="aaa" class="jeff.A"/>
-    <bean id="b" class="jeff.B"
-          p:name="B"
-    />
     <bean class="jeff.CConfig"/>
 
 </beans>

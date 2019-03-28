@@ -9,8 +9,8 @@ public class ApplicationContextLifeCycle {
         A a = (A)context.getBean("a");
         C c = a.getC();
 
-        A aaa = (A)context.getBean("aaa");
-        C ccc = aaa.getC();
+        CConfig cc = (CConfig)context.getBean("jeff.CConfig");
+        C ccc = cc.C();
         System.out.println("c == ccc: " + (c == ccc));
 
 //      Console Output:
